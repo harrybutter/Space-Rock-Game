@@ -1,0 +1,31 @@
+import pygame as pg
+
+class SpaceRocks:
+    def __init__(self):
+        self._init_pygame()
+        self.screen = pg.display.set_mode((800,600))
+
+    def main_loop(self):
+        while True: #if a function is not rly in the game but for the bg settings of the game, "_" is usually placed at the front of the function
+                    #if a function is very important and well known(?), "__" is inserted
+            self._handle_input()
+            self._process_game_logic()
+            self._draw()
+
+    def _init_pygame(self):
+        pg.init() #every function that uses pygame shld have pygame.init() in front
+        pg.display.set_caption("Space Rocks")
+
+    def _handle_input(self):
+        pass
+
+    def _process_game_logic(self):
+        pass
+
+    def _draw(self):
+        #whenever somehting happens, this function will be called to display any changes on the screen
+        self.screen.fill((140,70,175))
+        pg.display.flip() #.flip resets to the original contents
+
+
+
