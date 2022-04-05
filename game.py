@@ -17,7 +17,9 @@ class SpaceRocks:
         pg.display.set_caption("Space Rocks")
 
     def _handle_input(self):
-        pass
+        for event in pg.event.get():
+            if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
+                quit()
 
     def _process_game_logic(self):
         pass
