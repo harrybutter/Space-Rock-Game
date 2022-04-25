@@ -1,9 +1,11 @@
 import pygame as pg
+from utils import load_sprite
 
 class SpaceRocks:
     def __init__(self):
         self._init_pygame()
         self.screen = pg.display.set_mode((800,600))
+        self.background = load_sprite("space", False)
 
     def main_loop(self):
         while True: #if a function is not rly in the game but for the bg settings of the game, "_" is usually placed at the front of the function
@@ -26,8 +28,10 @@ class SpaceRocks:
 
     def _draw(self):
         #whenever somehting happens, this function will be called to display any changes on the screen
-        self.screen.fill((140,70,175))
+        self.screen.blit(self.background, (0,0)) #put the bg image over the window, not into the window, 
+                                                #starting from left bottom corner
         pg.display.flip() #.flip resets to the original contents
+
 
 
 
